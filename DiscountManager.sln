@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManager", "DiscountManager.csproj", "{ADDDA874-3C02-49B0-8623-37508D8FB173}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManager", "DiscountManager\DiscountManager.csproj", "{ADDDA874-3C02-49B0-8623-37508D8FB173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagerUnitTests", "..\DiscountManagerUnitTests\DiscountManagerUnitTests.csproj", "{582EF9BF-9870-4FC7-AD64-26B98469A27D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountManagerUnitTests", "..\DiscountManager\DiscountManagerUnitTests\DiscountManagerUnitTests.csproj", "{582EF9BF-9870-4FC7-AD64-26B98469A27D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
