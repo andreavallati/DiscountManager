@@ -10,6 +10,7 @@ Calculate a discount from a customer type (unregistered, registered, valuable, m
 - BusinessLogic
 - Presentation
 - Interfaces
+- Models
 - Utilities
 
 ### Project classes
