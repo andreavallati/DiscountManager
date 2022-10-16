@@ -15,7 +15,6 @@ Calculate a discount from a customer type (unregistered, registered, valuable, m
 ### Project classes
 
 - ### Application
-	+ **Customer.cs**: It handles the Customer entity. It contains the enum CustomerAccountType that defines possible account types for a customer
 	+ **DiscountCalculatorFactory.cs**: Implementation of the IDiscountCalculatorFactory. It returns the right class type depending on the CustomerAccountType
 	+ **UnregisteredCustomerDiscountCalculator.cs**: It calculates discount for UnregisteredCustomer
 	+ **RegisteredCustomerDiscountCalculator.cs**: It calculates discount for RegisteredCustomer
@@ -31,6 +30,9 @@ Calculate a discount from a customer type (unregistered, registered, valuable, m
 - ### Interfaces
 	+ **IDiscountCalculatorFactory.cs**: Interface implemented by the Factory class
 	+ **IDiscountCalculator.cs**: Interface implemented by the available DiscountCalculator
+	
+- ### Models
+	+ **Customer.cs**: It handles the Customer entity. It contains the enum CustomerAccountType that defines possible account types for a customer
 
 - ### Utilities
 	+ **DiscountManagerUtils.cs**: a static class with some discount constants and an utility method to get subscription discount
