@@ -55,5 +55,26 @@ namespace DiscountManagerUnitTests
             DiscountCalculatorBusinessLogic registeredCustomer = new DiscountCalculatorBusinessLogic(new DiscountCalculatorFactory(), 2);
             registeredCustomer.GetCalculatedDiscount(0.5m, 2, -5);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException), "Only numbers are allowed.")]
+        public void CalculateDiscountClick_InputAmountNotHandled_ThrowException()
+        {
+            decimal amount = Convert.ToDecimal("xxx");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException), "Only numbers are allowed.")]
+        public void CalculateDiscountClick_InputTypeNotHandled_ThrowException()
+        {
+            int customerAccountType = Convert.ToInt32("yyy");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException), "Only numbers are allowed.")]
+        public void CalculateDiscountClick_InputYearsNotHandled_ThrowException()
+        {
+            int customerSubscriptionYears = Convert.ToInt32("zzz");
+        }
     }
 }
