@@ -55,17 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Application\Customer.cs" />
-    <Compile Include="Application\DiscountCalculatorFactory.cs" />
-    <Compile Include="Application\MostValuableCustomerDiscountCalculator.cs" />
-    <Compile Include="Application\RegisteredCustomerDiscountCalculator.cs" />
-    <Compile Include="Application\UnregisteredCustomerDiscountCalculator.cs" />
-    <Compile Include="Application\ValuableCustomerDiscountCalculator.cs" />
-    <Compile Include="BusinessLogic\DiscountCalculatorBusinessLogic.cs" />
+    <Compile Include="ApplicationLayer\DiscountCalculatorFactory.cs" />
+    <Compile Include="ApplicationLayer\MostValuableCustomerDiscountCalculator.cs" />
+    <Compile Include="ApplicationLayer\RegisteredCustomerDiscountCalculator.cs" />
+    <Compile Include="ApplicationLayer\UnregisteredCustomerDiscountCalculator.cs" />
+    <Compile Include="ApplicationLayer\ValuableCustomerDiscountCalculator.cs" />
+    <Compile Include="BusinessLogicLayer\DiscountCalculatorBusinessLogic.cs" />
     <Compile Include="Interfaces\IDiscountCalculator.cs" />
     <Compile Include="Interfaces\IDiscountCalculatorFactory.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Utilities\DiscountManagerUtils.cs" />
-    <Page Include="Presentation\DiscountManagerWindow.xaml">
+    <Page Include="PresentationLayer\DiscountManagerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -73,7 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Presentation\DiscountManagerWindow.xaml.cs">
+    <Compile Include="PresentationLayer\DiscountManagerWindow.xaml.cs">
       <DependentUpon>DiscountManagerWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

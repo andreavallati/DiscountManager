@@ -3,7 +3,7 @@ using DiscountManager.BusinessLogicLayer;
 using System;
 using System.Windows;
 
-namespace DiscountManager
+namespace DiscountManager.PresentationLayer
 {
     /// <summary>
     /// Interaction logic for DiscountManagerWindow.xaml
@@ -51,7 +51,7 @@ namespace DiscountManager
 
         private void CloseApplication_Closed(object sender, EventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
         }
     }
 }

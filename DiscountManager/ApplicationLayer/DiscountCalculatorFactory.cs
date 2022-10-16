@@ -1,4 +1,5 @@
 ﻿using DiscountManager.Interfaces;
+using DiscountManager.Models;
 using System;
 
 namespace DiscountManager.ApplicationLayer
