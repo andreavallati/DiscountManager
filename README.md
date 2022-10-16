@@ -6,26 +6,26 @@ Calculate a discount from a customer type (unregistered, registered, valuable, m
 
 ### Project folders
 
-- Application
-- BusinessLogic
-- Presentation
+- ApplicationLayer
+- BusinessLogicLayer
+- PresentationLayer
 - Interfaces
 - Models
 - Utilities
 
 ### Project classes
 
-- ### Application
+- ### ApplicationLayer
 	+ **DiscountCalculatorFactory.cs**: Implementation of the IDiscountCalculatorFactory. It returns the right class type depending on the CustomerAccountType
 	+ **UnregisteredCustomerDiscountCalculator.cs**: It calculates discount for UnregisteredCustomer
 	+ **RegisteredCustomerDiscountCalculator.cs**: It calculates discount for RegisteredCustomer
 	+ **ValuableCustomerDiscountCalculator.cs**: It calculates discount for ValuableCustomer
 	+ **MostValuableCustomerDiscountCalculator.cs**: It calculates discount for MostValuableCustomer
 
-- ### BusinessLogic
+- ### BusinessLogicLayer
 	+ **DiscountCalculatorBusinessLogic.cs**: Core of the application. It uses Dependency Injection to inject factory interface in the constructor. It retrieves the right Discount Calculator using the factory method and calculates the discount
 
-- ### Presentation
+- ### PresentationLayer
 	+ **DiscountManagerWindow.xaml**: very basic and simple UI that gets user inputs and show the calculated discount as output.
 
 - ### Interfaces
