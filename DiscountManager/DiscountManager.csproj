@@ -64,6 +64,7 @@
     <Compile Include="Interfaces\IDiscountCalculator.cs" />
     <Compile Include="Interfaces\IDiscountCalculatorFactory.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Services\DiscountCalculatorService.cs" />
     <Compile Include="Utilities\DiscountManagerUtils.cs" />
     <Page Include="PresentationLayer\DiscountManagerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

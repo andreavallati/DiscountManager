@@ -1,5 +1,4 @@
-﻿using DiscountManager.ApplicationLayer;
-using DiscountManager.BusinessLogicLayer;
+﻿using DiscountManager.Services;
 using System;
 using System.Windows;
 
@@ -10,9 +9,13 @@ namespace DiscountManager.PresentationLayer
     /// </summary>
     public partial class DiscountManagerWindow : Window
     {
+        DiscountCalculatorService _discountCalculatorService;
+
         public DiscountManagerWindow()
         {
             InitializeComponent();
+
+            _discountCalculatorService = new DiscountCalculatorService();
         }
 
         private void CalculateDiscount_Click(object sender, RoutedEventArgs e)
@@ -25,11 +28,9 @@ namespace DiscountManager.PresentationLayer
                     int customerAccountType = Convert.ToInt32(typeTextBox.Text);
                     int customerSubscriptionYears = Convert.ToInt32(yearsTextBox.Text);
 
-                    DiscountCalculatorBusinessLogic discountCalculator = new DiscountCalculatorBusinessLogic(new DiscountCalculatorFactory(), customerAccountType);
-
-                    if (discountCalculator != null)
+                    if (_discountCalculatorService != null)
                     {
-                        decimal discount = discountCalculator.GetCalculatedDiscount(amount, customerAccountType, customerSubscriptionYears);
+                        decimal discount = _discountCalculatorService.GetDiscount(amount, customerAccountType, customerSubscriptionYears);
 
                         outputTextBox.Text = "Calculated discount is: " + discount;
                     }
@@ -51,7 +52,7 @@ namespace DiscountManager.PresentationLayer
 
         private void CloseApplication_Closed(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
     }
 }

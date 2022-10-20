@@ -1,26 +1,19 @@
 ﻿using DiscountManager.Interfaces;
-using System;
 
 namespace DiscountManager.BusinessLogicLayer
 {
     public class DiscountCalculatorBusinessLogic
     {
-        private readonly IDiscountCalculator _discountCalculator;
+        private readonly IDiscountCalculatorFactory _discountCalculatorFactory;
 
-        public DiscountCalculatorBusinessLogic(IDiscountCalculatorFactory discountCalculatorFactory, int customerAccountType)
+        public DiscountCalculatorBusinessLogic(IDiscountCalculatorFactory discountCalculatorFactory)
         {
-            _discountCalculator = discountCalculatorFactory.GetDiscountCalculatorType(customerAccountType);
+            _discountCalculatorFactory = discountCalculatorFactory;
         }
 
-        public decimal GetCalculatedDiscount(decimal amount, int customerAccountType, int customerSubscriptionYears)
+        public decimal ProcessDiscount(decimal amount, int customerAccountType, int customerSubscriptionYears)
         {
-            if (amount < 0)
-                throw new Exception("Amount can't be negative.");
-
-            if (customerSubscriptionYears < 0)
-                throw new Exception("Subscription years can't be negative.");
-
-            return _discountCalculator.CalculateDiscount(amount, customerAccountType, customerSubscriptionYears);
+            return _discountCalculatorFactory.GetDiscountCalculatorType(customerAccountType).CalculateDiscount(amount, customerAccountType, customerSubscriptionYears);
         }
     }
 }

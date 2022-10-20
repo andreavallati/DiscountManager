@@ -8,8 +8,9 @@ namespace DiscountManager.ApplicationLayer
         public decimal CalculateDiscount(decimal amount, int customerAccountType, int customerSubscriptionYears)
         {
             decimal mostValuableCustomerDiscount = DiscountManagerUtils.MostValuableCustomerDiscount * amount;
+            decimal subAmount = amount - mostValuableCustomerDiscount;
 
-            return amount - mostValuableCustomerDiscount - DiscountManagerUtils.GetSubscriptionDiscount(customerSubscriptionYears) * (amount - mostValuableCustomerDiscount);
+            return subAmount - DiscountManagerUtils.GetSubscriptionDiscount(customerSubscriptionYears) * subAmount;
         }
     }
 }
